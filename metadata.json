@@ -1,0 +1,6 @@
+{
+  "name": "Naija Pot Kitchen & Grill",
+  "description": "Premium Nigerian Restaurant & Grill inspired by Lagos Island bukka culture, charcoal grills, rich soups, and authentic hospitality.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
