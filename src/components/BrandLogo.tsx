@@ -3,43 +3,60 @@ import { siteConfig } from '../data/siteConfig';
 
 interface BrandLogoProps {
   className?: string;
-  variant?: 'light' | 'dark' | 'burgundy' | 'gold';
+  variant?: 'light' | 'dark' | 'burgundy' | 'brown' | 'gold';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   showSubtitle?: boolean;
 }
 
 export const BrandLogo: React.FC<BrandLogoProps> = ({
   className = '',
-  variant = 'burgundy',
+  variant = 'brown',
   size = 'md',
   showSubtitle = true,
 }) => {
-  // Check if a custom image logo file has been configured or provided
-  if (siteConfig.branding.logoImagePath) {
-    return (
-      <img
-        src={siteConfig.branding.logoImagePath}
-        alt={siteConfig.legalName}
-        className={`object-contain ${className}`}
-        referrerPolicy="no-referrer"
-      />
-    );
-  }
+  const isLight = variant === 'light'; // For dark backgrounds like black/brown sections
+  const primaryText = isLight ? '#FFFDF9' : variant === 'dark' ? '#0B0A09' : '#3D2314';
+  const accentGold = '#D4A53A';
+  const subtitleColor = isLight ? '#E8C547' : '#5C3822';
 
-  // Color schemes based on variant
-  const isLight = variant === 'light'; // For dark backgrounds like burgundy footer
-  const primaryText = isLight ? '#FFF7E8' : '#6D1F2B';
-  const accentGold = '#C6A15B';
-  const subtitleColor = isLight ? '#DFC183' : '#6D1F2B';
-
-  const potSizes = {
-    sm: { h: 32, w: 32, textMain: 'text-lg', subText: 'text-[9px]' },
-    md: { h: 42, w: 42, textMain: 'text-2xl', subText: 'text-[10px]' },
-    lg: { h: 56, w: 56, textMain: 'text-3xl', subText: 'text-xs' },
-    xl: { h: 72, w: 72, textMain: 'text-4xl', subText: 'text-sm' },
+  const sizeClasses = {
+    sm: { w: 32, h: 32, img: 'w-8 h-8', textMain: 'text-lg', subText: 'text-[9px]' },
+    md: { w: 48, h: 48, img: 'w-12 h-12', textMain: 'text-2xl', subText: 'text-[10px]' },
+    lg: { w: 64, h: 64, img: 'w-16 h-16', textMain: 'text-3xl', subText: 'text-xs' },
+    xl: { w: 96, h: 96, img: 'w-24 h-24', textMain: 'text-4xl', subText: 'text-sm' },
   };
 
-  const currentSize = potSizes[size];
+  const currentSize = sizeClasses[size];
+
+  // If official logo image is configured, render the official Canva asset
+  if (siteConfig.branding.logoImagePath) {
+    return (
+      <div className={`flex items-center gap-3 select-none ${className}`}>
+        <img
+          src={siteConfig.branding.logoImagePath}
+          alt={siteConfig.legalName}
+          className={`${currentSize.img} object-contain rounded-full shadow-xs transition-transform duration-300 hover:scale-105 shrink-0 border border-[#C6A15B]/30`}
+          referrerPolicy="no-referrer"
+        />
+        {showSubtitle && (
+          <div className="flex flex-col leading-none">
+            <span
+              className={`font-serif font-black tracking-wider ${currentSize.textMain}`}
+              style={{ color: primaryText }}
+            >
+              NAIJA <span style={{ color: accentGold }}>POT</span>
+            </span>
+            <span
+              className={`font-sans uppercase font-semibold tracking-[0.22em] mt-0.5 ${currentSize.subText}`}
+              style={{ color: subtitleColor }}
+            >
+              Kitchen & Grill Ltd
+            </span>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className={`flex items-center gap-3 select-none ${className}`}>

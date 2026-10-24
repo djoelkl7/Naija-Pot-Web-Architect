@@ -68,11 +68,11 @@ export const CartDrawer: React.FC = () => {
       />
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[#FFF7E8] text-[#211A19] shadow-2xl flex flex-col border-l border-[#6D1F2B]/20">
+        <div className="w-screen max-w-md bg-[#FAF6F0] text-[#0B0A09] shadow-2xl flex flex-col border-l border-[#D4A53A]/30">
           {/* Header */}
-          <div className="px-6 py-5 bg-[#6D1F2B] text-[#FFF7E8] flex items-center justify-between border-b border-[#C6A15B]/30">
+          <div className="px-6 py-5 bg-[#0B0A09] text-[#FFFDF9] flex items-center justify-between border-b border-[#D4A53A]/30">
             <div className="flex items-center gap-2.5">
-              <ShoppingBag className="w-5 h-5 text-[#C6A15B]" />
+              <ShoppingBag className="w-5 h-5 text-[#D4A53A]" />
               <h3 className="font-serif text-lg font-bold">
                 {checkoutStep === 'cart' && 'Your Takeaway Basket'}
                 {checkoutStep === 'details' && 'Complete Your Order'}
@@ -81,7 +81,7 @@ export const CartDrawer: React.FC = () => {
             </div>
             <button
               onClick={() => setIsCartOpen(false)}
-              className="p-1 rounded-full text-[#FFF7E8]/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+              className="p-1 rounded-full text-stone-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -92,14 +92,14 @@ export const CartDrawer: React.FC = () => {
             {checkoutStep === 'cart' && (
               <>
                 {/* Order Type Toggle */}
-                <div className="grid grid-cols-2 gap-2 p-1 bg-[#F3E8D6] rounded-lg border border-[#C6A15B]/30">
+                <div className="grid grid-cols-2 gap-2 p-1 bg-[#FAF6F0] rounded-lg border border-[#D4A53A]/30">
                   <button
                     type="button"
                     onClick={() => setOrderType('collection')}
                     className={`py-2 text-xs font-bold rounded-md transition-all cursor-pointer ${
                       orderType === 'collection'
-                        ? 'bg-[#6D1F2B] text-[#FFF7E8] shadow-sm'
-                        : 'text-[#211A19]/80 hover:text-[#211A19]'
+                        ? 'bg-[#3D2314] text-[#D4A53A] shadow-sm'
+                        : 'text-stone-700 hover:text-[#0B0A09]'
                     }`}
                   >
                     Collection (25 mins)
@@ -109,8 +109,8 @@ export const CartDrawer: React.FC = () => {
                     onClick={() => setOrderType('delivery')}
                     className={`py-2 text-xs font-bold rounded-md transition-all cursor-pointer ${
                       orderType === 'delivery'
-                        ? 'bg-[#6D1F2B] text-[#FFF7E8] shadow-sm'
-                        : 'text-[#211A19]/80 hover:text-[#211A19]'
+                        ? 'bg-[#3D2314] text-[#D4A53A] shadow-sm'
+                        : 'text-stone-700 hover:text-[#0B0A09]'
                     }`}
                   >
                     Local Delivery (45 mins)
@@ -325,7 +325,7 @@ export const CartDrawer: React.FC = () => {
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 py-2.5 bg-[#6D1F2B] text-[#FFF7E8] text-xs font-bold rounded-md hover:bg-[#4A121B] transition-colors cursor-pointer shadow-sm"
+                    className="flex-1 py-2.5 bg-[#1B5E20] hover:bg-[#10471A] text-[#FFF7E8] text-xs font-bold rounded-md transition-colors cursor-pointer shadow-sm border border-[#C6A15B]/30"
                   >
                     Confirm & Place Order (£{grandTotal.toFixed(2)})
                   </button>
@@ -414,11 +414,11 @@ export const CartDrawer: React.FC = () => {
 
               <button
                 onClick={handleStartCheckout}
-                className="w-full py-3 bg-[#6D1F2B] hover:bg-[#4A121B] text-[#FFF7E8] text-sm font-bold rounded-lg transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3 bg-[#3D2314] hover:bg-[#4E2E1A] text-[#FFFDF9] text-sm font-bold rounded-lg transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer border border-[#D4A53A]/50"
               >
                 <span>Proceed to Checkout</span>
                 <span>·</span>
-                <span>£{grandTotal.toFixed(2)}</span>
+                <span className="text-[#D4A53A]">£{grandTotal.toFixed(2)}</span>
               </button>
             </div>
           )}

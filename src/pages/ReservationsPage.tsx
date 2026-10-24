@@ -44,16 +44,16 @@ export const ReservationsPage: React.FC = () => {
   return (
     <div className="space-y-12 pb-24">
       {/* Header */}
-      <section className="bg-[#4A121B] text-[#FFF7E8] py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+      <section className="bg-gradient-to-b from-[#0B0A09] via-[#141210] to-[#26160C] text-[#FFFDF9] py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden border-b border-[#D4A53A]/25">
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C6A15B]/20 border border-[#C6A15B]/40 text-[#DFC183] text-xs font-semibold uppercase tracking-[0.25em]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D4A53A]/15 border border-[#D4A53A]/40 text-[#E8C547] text-xs font-semibold uppercase tracking-[0.25em]">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Table Reservations</span>
           </div>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[#FFFDF9]">
             Reserve Your Experience
           </h1>
-          <p className="text-sm sm:text-base text-[#FFF7E8]/85 max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-stone-300 max-w-xl mx-auto">
             Book an intimate table, family gathering, or celebration. We look forward to welcoming you to the Naija Pot dining room.
           </p>
         </div>
@@ -290,7 +290,7 @@ export const ReservationsPage: React.FC = () => {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#6D1F2B] hover:bg-[#4A121B] text-[#FFF7E8] font-bold text-sm uppercase tracking-wider rounded-lg shadow-md transition-all cursor-pointer"
+                  className="w-full py-4 bg-[#1B5E20] hover:bg-[#10471A] text-[#FFF7E8] font-bold text-sm uppercase tracking-wider rounded-lg shadow-md transition-all cursor-pointer border border-[#C6A15B]/40"
                 >
                   Confirm Table Booking
                 </button>
@@ -320,20 +320,37 @@ export const ReservationsPage: React.FC = () => {
               </ul>
             </div>
 
-            <div className="bg-[#FFF7E8] p-6 rounded-2xl border border-[#6D1F2B]/15 space-y-3">
-              <h4 className="font-serif text-lg font-bold text-[#6D1F2B]">
+            <div className="bg-[#FAF6F0] p-6 rounded-2xl border border-[#D4A53A]/30 space-y-3">
+              <h4 className="font-serif text-lg font-bold text-[#3D2314]">
                 Direct Bookings & Groups
               </h4>
-              <p className="text-xs text-[#211A19]/75 leading-relaxed">
+              <p className="text-xs text-stone-700 leading-relaxed">
                 For private dining hire, weddings, or corporate bookings of 12 or more guests, please contact our events team directly:
               </p>
-              <div className="pt-2 text-xs font-semibold text-[#6D1F2B] space-y-1">
+              <div className="pt-2 text-xs font-semibold text-[#3D2314] space-y-2">
                 <p className="flex items-center gap-2">
-                  <Phone className="w-3.5 h-3.5 text-[#C6A15B]" />
-                  <span>{siteConfig.contact.phone}</span>
+                  <Phone className="w-3.5 h-3.5 text-[#D4A53A]" />
+                  <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} className="font-mono hover:text-[#D4A53A]">
+                    Call: {siteConfig.contact.phone}
+                  </a>
                 </p>
                 <p className="flex items-center gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-[#C6A15B]" />
+                  <span className="w-3.5 h-3.5 text-[#25D366] shrink-0 flex items-center justify-center">
+                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.761.88 2.8.88 3.182 0 5.768-2.587 5.768-5.766.001-3.181-2.585-5.767-5.772-5.772-5.772-5.767zm7.65 5.766c0 4.218-3.433 7.651-7.65 7.651-1.336 0-2.434-.343-3.489-.968l-4.542 1.19 1.213-4.432c-.696-1.111-1.066-2.228-1.066-3.441 0-4.219 3.433-7.651 7.65-7.651 4.217 0 7.649 3.432 7.649 7.651z" />
+                    </svg>
+                  </span>
+                  <a
+                    href={siteConfig.socials.whatsapp}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-mono text-[#0B0A09] hover:text-[#25D366]"
+                  >
+                    WhatsApp: {siteConfig.contact.whatsappPhone}
+                  </a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#D4A53A]" />
                   <span>{siteConfig.contact.reservationsEmail}</span>
                 </p>
               </div>

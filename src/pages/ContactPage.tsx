@@ -59,17 +59,17 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
   return (
     <div className="space-y-16 pb-24">
       {/* Header */}
-      <section className="bg-[#4A121B] text-[#FFF7E8] py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+      <section className="bg-gradient-to-b from-[#0B0A09] via-[#141210] to-[#26160C] text-[#FFFDF9] py-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden border-b border-[#D4A53A]/25">
         <div className="max-w-4xl mx-auto space-y-4 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C6A15B]/20 border border-[#C6A15B]/40 text-[#DFC183] text-xs font-semibold uppercase tracking-[0.25em]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D4A53A]/15 border border-[#D4A53A]/40 text-[#E8C547] text-xs font-semibold uppercase tracking-[0.25em]">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Hospitality & Location</span>
           </div>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-[#FFFDF9]">
             Connect With Naija Pot
           </h1>
-          <p className="text-sm sm:text-base text-[#FFF7E8]/85 max-w-xl mx-auto">
-            We are located in the heart of London. Find directions, opening hours, or drop us a message.
+          <p className="text-sm sm:text-base text-stone-300 max-w-xl mx-auto">
+            We are located in the heart of London. Call our order desk, chat directly on WhatsApp, or book your table.
           </p>
         </div>
       </section>
@@ -79,32 +79,73 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Contact Details & Interactive Map */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#6D1F2B]/15 shadow-sm space-y-6">
-              <h3 className="font-serif text-2xl font-bold text-[#6D1F2B]">
+            <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#D4A53A]/20 shadow-md space-y-6">
+              <h3 className="font-serif text-2xl font-bold text-[#3D2314]">
                 Restaurant Information
               </h3>
 
-              <div className="space-y-4 text-xs sm:text-sm text-[#211A19]/80">
+              <div className="space-y-4 text-xs sm:text-sm text-[#0B0A09]/80">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[#C6A15B] shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[#D4A53A] shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-[#211A19] block">{siteConfig.legalName}</strong>
+                    <strong className="text-[#0B0A09] block font-serif text-base">{siteConfig.legalName}</strong>
                     <span>{siteConfig.contact.addressLine1}</span><br />
                     <span>{siteConfig.contact.addressLine2}</span><br />
                     <span>{siteConfig.contact.city}, {siteConfig.contact.postcode}</span>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-[#C6A15B] shrink-0" />
-                  <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} className="hover:text-[#6D1F2B] font-medium">
-                    {siteConfig.contact.phone}
+                {/* Direct Calling Line */}
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-[#FAF6F0] border border-[#D4A53A]/30">
+                  <div className="w-9 h-9 rounded-full bg-[#3D2314] text-[#D4A53A] flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className="text-[10px] uppercase tracking-wider text-stone-500 font-bold block">
+                      Direct Calling Number
+                    </span>
+                    <a
+                      href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`}
+                      className="text-sm sm:text-base font-mono font-bold text-[#3D2314] hover:text-[#D4A53A] transition-colors"
+                    >
+                      {siteConfig.contact.phone}
+                    </a>
+                  </div>
+                </div>
+
+                {/* WhatsApp Chat Line */}
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-emerald-50/60 border border-emerald-500/30">
+                  <div className="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-sm">
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.761.88 2.8.88 3.182 0 5.768-2.587 5.768-5.766.001-3.181-2.585-5.767-5.772-5.772-5.767zm7.65 5.766c0 4.218-3.433 7.651-7.65 7.651-1.336 0-2.434-.343-3.489-.968l-4.542 1.19 1.213-4.432c-.696-1.111-1.066-2.228-1.066-3.441 0-4.219 3.433-7.651 7.65-7.651 4.217 0 7.649 3.432 7.649 7.651z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className="text-[10px] uppercase tracking-wider text-emerald-800 font-bold block">
+                      WhatsApp Quick Chat
+                    </span>
+                    <a
+                      href={siteConfig.socials.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm sm:text-base font-mono font-bold text-emerald-900 hover:text-emerald-700 transition-colors"
+                    >
+                      {siteConfig.contact.whatsappPhone}
+                    </a>
+                  </div>
+                  <a
+                    href={siteConfig.socials.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1.5 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold transition-all shrink-0"
+                  >
+                    Chat
                   </a>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-[#C6A15B] shrink-0" />
-                  <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[#6D1F2B] font-medium">
+                  <Mail className="w-5 h-5 text-[#D4A53A] shrink-0" />
+                  <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[#3D2314] font-medium">
                     {siteConfig.contact.email}
                   </a>
                 </div>

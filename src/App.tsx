@@ -18,6 +18,7 @@ import { ReservationsPage } from './pages/ReservationsPage';
 import { OrderOnlinePage } from './pages/OrderOnlinePage';
 import { ContactPage } from './pages/ContactPage';
 import { MenuItem } from './data/menuData';
+import { WhatsAppButton } from './components/WhatsAppButton';
 import { Calendar, ShoppingBag, ArrowUp } from 'lucide-react';
 
 export default function App() {
@@ -70,7 +71,7 @@ export default function App() {
 
   return (
     <CartProvider>
-      <div className="min-h-screen flex flex-col bg-[#FFF7E8] text-[#211A19]">
+      <div className="min-h-screen flex flex-col bg-[#FAF6F0] text-[#0B0A09]">
         {/* Optional dismissible Announcement Bar */}
         <AnnouncementBar onNavigateToBooking={() => navigateTo('reservations')} />
 
@@ -127,32 +128,38 @@ export default function App() {
           onClose={() => setCustomizingDish(null)}
         />
 
+        {/* Dedicated WhatsApp floating button down at the right hand corner */}
+        <WhatsAppButton
+          phoneNumber="447342229865"
+          formattedNumber="+44 7342 229865"
+        />
+
         {/* Floating Quick Action for Mobile (Within 15% Mobile Sticky Cap) */}
-        <div className="sm:hidden fixed bottom-4 left-4 right-4 z-30 flex gap-2">
+        <div className="sm:hidden fixed bottom-4 left-4 right-20 z-30 flex gap-2">
           <button
             onClick={() => navigateTo('reservations')}
-            className="flex-1 py-3 px-4 bg-[#6D1F2B] text-[#FFF7E8] text-xs font-bold rounded-lg shadow-xl flex items-center justify-center gap-1.5 border border-[#C6A15B]/40 active:scale-95 transition-transform"
+            className="flex-1 py-3 px-3 bg-[#3D2314] text-[#FFFDF9] text-xs font-bold rounded-xl shadow-xl flex items-center justify-center gap-1.5 border border-[#D4A53A]/40 active:scale-95 transition-transform"
           >
-            <Calendar className="w-3.5 h-3.5 text-[#C6A15B]" />
+            <Calendar className="w-3.5 h-3.5 text-[#D4A53A]" />
             <span>Book Table</span>
           </button>
           <button
             onClick={() => navigateTo('order')}
-            className="flex-1 py-3 px-4 bg-[#C6A15B] text-[#211A19] text-xs font-bold rounded-lg shadow-xl flex items-center justify-center gap-1.5 active:scale-95 transition-transform"
+            className="flex-1 py-3 px-3 bg-[#0B0A09] text-[#FFFDF9] text-xs font-bold rounded-xl shadow-xl flex items-center justify-center gap-1.5 active:scale-95 transition-transform border border-[#D4A53A]/40"
           >
-            <ShoppingBag className="w-3.5 h-3.5" />
-            <span>Order Food</span>
+            <ShoppingBag className="w-3.5 h-3.5 text-[#D4A53A]" />
+            <span>Order</span>
           </button>
         </div>
 
-        {/* Back to top button (Desktop) */}
+        {/* Back to top button (Desktop positioned above WhatsApp button) */}
         {showBackToTop && (
           <button
             onClick={scrollToTop}
-            className="hidden sm:flex fixed bottom-6 right-6 z-30 p-3 bg-[#6D1F2B] hover:bg-[#4A121B] text-[#FFF7E8] rounded-full shadow-lg border border-[#C6A15B]/30 hover:border-[#C6A15B] transition-all cursor-pointer items-center justify-center"
+            className="hidden sm:flex fixed bottom-24 right-6 z-40 p-3 bg-[#141210] hover:bg-[#3D2314] text-[#FFFDF9] rounded-full shadow-lg border border-[#D4A53A]/30 hover:border-[#D4A53A] transition-all cursor-pointer items-center justify-center"
             aria-label="Back to top"
           >
-            <ArrowUp className="w-4 h-4 text-[#C6A15B]" />
+            <ArrowUp className="w-4 h-4 text-[#D4A53A]" />
           </button>
         )}
       </div>

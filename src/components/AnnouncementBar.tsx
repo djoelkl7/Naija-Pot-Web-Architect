@@ -14,9 +14,10 @@ export const AnnouncementBar: React.FC<AnnouncementBarProps> = ({ onNavigateToBo
   }
 
   return (
-    <div className="bg-[#4A121B] text-[#FFF7E8] text-xs font-medium py-2 px-4 border-b border-[#C6A15B]/30 relative z-50">
+    <div className="bg-gradient-to-r from-[#10471A] via-[#1B5E20] to-[#10471A] text-[#FFF7E8] text-xs font-medium py-2 px-4 border-b border-[#C6A15B]/40 relative z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <div className="flex items-center gap-2 mx-auto text-center">
+          <span className="w-2 h-2 rounded-full bg-[#22C55E] shrink-0 hidden sm:inline" />
           <Sparkles className="w-3.5 h-3.5 text-[#C6A15B] shrink-0 hidden sm:inline" />
           <span className="leading-tight">
             {siteConfig.announcement.text}

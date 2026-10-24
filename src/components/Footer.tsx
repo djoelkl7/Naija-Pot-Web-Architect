@@ -12,31 +12,44 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#4A121B] text-[#FFF7E8] border-t-2 border-[#C6A15B]/40">
+    <footer className="bg-[#0B0A09] text-[#FFFDF9] border-t-2 border-[#D4A53A]/40">
       {/* Upper Footer: Brand, Hours, Contact, Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Col 1: Identity & Cultural Statement */}
           <div className="space-y-5">
             <BrandLogo variant="light" size="lg" />
-            <p className="text-sm text-[#FFF7E8]/80 leading-relaxed max-w-sm">
+            <p className="text-sm text-[#FFFDF9]/80 leading-relaxed max-w-sm">
               Authentic Nigerian dining and charcoal grill experience inspired by Lagos bukka culinary heritage. Fire, flavour, and heartfelt Naija hospitality.
             </p>
             <div className="pt-2">
-              <span className="text-xs uppercase tracking-widest text-[#C6A15B] font-semibold block mb-2">
+              <span className="text-xs uppercase tracking-widest text-[#D4A53A] font-semibold block mb-2">
                 Certified Halal & Daily Fresh
               </span>
-              <p className="text-xs text-[#FFF7E8]/70">
+              <p className="text-xs text-[#FFFDF9]/70">
                 All poultry and meats are 100% Halal certified and prepared with authentic West African ingredients.
               </p>
             </div>
-            {/* Social Icons */}
+            {/* Social & Contact Quick Icons */}
             <div className="flex items-center gap-3 pt-2">
+              {/* WhatsApp Green Icon */}
+              <a
+                href={siteConfig.socials.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-105 transition-transform shadow-md"
+                aria-label={`WhatsApp (${siteConfig.contact.whatsappPhone})`}
+                title={`WhatsApp: ${siteConfig.contact.whatsappPhone}`}
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.761.88 2.8.88 3.182 0 5.768-2.587 5.768-5.766.001-3.181-2.585-5.767-5.772-5.772-5.767zm7.65 5.766c0 4.218-3.433 7.651-7.65 7.651-1.336 0-2.434-.343-3.489-.968l-4.542 1.19 1.213-4.432c-.696-1.111-1.066-2.228-1.066-3.441 0-4.219 3.433-7.651 7.65-7.651 4.217 0 7.649 3.432 7.649 7.651z" />
+                </svg>
+              </a>
               <a
                 href={siteConfig.socials.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-[#6D1F2B] border border-[#C6A15B]/40 flex items-center justify-center text-[#C6A15B] hover:text-[#FFF7E8] hover:border-[#C6A15B] transition-colors"
+                className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -45,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 href={siteConfig.socials.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-[#6D1F2B] border border-[#C6A15B]/40 flex items-center justify-center text-[#C6A15B] hover:text-[#FFF7E8] hover:border-[#C6A15B] transition-colors"
+                className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -54,7 +67,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 href={siteConfig.contact.googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-[#6D1F2B] border border-[#C6A15B]/40 flex items-center justify-center text-[#C6A15B] hover:text-[#FFF7E8] hover:border-[#C6A15B] transition-colors"
+                className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] transition-colors"
                 aria-label="Google Maps Location"
               >
                 <MapPin className="w-4 h-4" />
@@ -184,15 +197,37 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </div>
 
               <div className="flex items-center gap-2.5 pt-2">
-                <Phone className="w-4 h-4 text-[#C6A15B] shrink-0" />
-                <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} className="hover:text-[#C6A15B]">
-                  {siteConfig.contact.phone}
-                </a>
+                <Phone className="w-4 h-4 text-[#D4A53A] shrink-0" />
+                <div>
+                  <span className="text-[10px] uppercase tracking-wider text-stone-400 block">Call Orders & Bookings</span>
+                  <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} className="hover:text-[#D4A53A] font-mono font-semibold text-[#FFFDF9]">
+                    {siteConfig.contact.phone}
+                  </a>
+                </div>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#C6A15B] shrink-0" />
-                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[#C6A15B]">
+                <span className="w-4 h-4 text-[#25D366] shrink-0 flex items-center justify-center">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.761.88 2.8.88 3.182 0 5.768-2.587 5.768-5.766.001-3.181-2.585-5.767-5.772-5.772-5.767zm7.65 5.766c0 4.218-3.433 7.651-7.65 7.651-1.336 0-2.434-.343-3.489-.968l-4.542 1.19 1.213-4.432c-.696-1.111-1.066-2.228-1.066-3.441 0-4.219 3.433-7.651 7.65-7.651 4.217 0 7.649 3.432 7.649 7.651z" />
+                  </svg>
+                </span>
+                <div>
+                  <span className="text-[10px] uppercase tracking-wider text-stone-400 block">WhatsApp Direct</span>
+                  <a
+                    href={siteConfig.socials.whatsapp}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-[#25D366] font-mono font-semibold text-[#FFFDF9]"
+                  >
+                    {siteConfig.contact.whatsappPhone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-[#D4A53A] shrink-0" />
+                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[#D4A53A] text-stone-300">
                   {siteConfig.contact.email}
                 </a>
               </div>
@@ -200,7 +235,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <div className="pt-2">
                 <button
                   onClick={() => { onNavigate('reservations'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="w-full py-2.5 px-4 bg-[#6D1F2B] hover:bg-[#8A2838] border border-[#C6A15B] text-[#FFF7E8] font-semibold text-center rounded-md transition-colors cursor-pointer text-xs"
+                  className="w-full py-2.5 px-4 bg-[#3D2314] hover:bg-[#4E2E1A] border border-[#D4A53A] text-[#FFFDF9] font-semibold text-center rounded-lg transition-colors cursor-pointer text-xs"
                 >
                   Reserve Your Table
                 </button>
@@ -210,9 +245,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         {/* Allergen & Dietary Notice */}
-        <div className="mt-12 pt-8 border-t border-[#FFF7E8]/10 text-xs text-[#FFF7E8]/60 leading-relaxed max-w-4xl">
+        <div className="mt-12 pt-8 border-t border-stone-800 text-xs text-stone-400 leading-relaxed max-w-4xl">
           <p>
-            <strong className="text-[#C6A15B]">Allergen Advisory:</strong> {siteConfig.policies.dietaryStatement}
+            <strong className="text-[#D4A53A]">Allergen Advisory:</strong> {siteConfig.policies.dietaryStatement}
           </p>
         </div>
 

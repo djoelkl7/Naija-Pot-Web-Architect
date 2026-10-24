@@ -22,7 +22,9 @@ export interface RestaurantConfig {
     city: string;
     postcode: string;
     country: string;
-    phone: string;
+    phone: string; // Calling number: +44 7444 614764
+    whatsappPhone: string; // WhatsApp number: +44 7342 229865
+    whatsappLink: string;
     email: string;
     reservationsEmail: string;
     googleMapsEmbedUrl: string;
@@ -42,12 +44,23 @@ export interface RestaurantConfig {
     whatsapp: string;
   };
   branding: {
-    burgundy: string;
+    black: string;
+    blackSoft: string;
+    brown: string;
+    brownDark: string;
+    brownWarm: string;
+    brownLight: string;
+    gold: string;
+    goldLight: string;
+    goldBright: string;
+    goldDim: string;
     royalGold: string;
+    burgundy: string;
     warmIvory: string;
     deepCharcoal: string;
     softCream: string;
-    logoImagePath: string | null; // Leave path for user's Canva logo export e.g. "/images/naija-pot-logo.png"
+    whatsappGreen: string;
+    logoImagePath: string | null;
   };
   policies: {
     reservationGracePeriod: string;
@@ -77,7 +90,9 @@ export const siteConfig: RestaurantConfig = {
     city: "London",
     postcode: "E1 6AN",
     country: "United Kingdom",
-    phone: "+44 (0) 20 7946 0852",
+    phone: "+44 7444 614764", // Direct call line
+    whatsappPhone: "+44 7342 229865", // WhatsApp direct
+    whatsappLink: "https://wa.me/447342229865",
     email: "info@naijapotkitchen.co.uk",
     reservationsEmail: "bookings@naijapotkitchen.co.uk",
     // Embed map pointing to London restaurant district
@@ -99,16 +114,27 @@ export const siteConfig: RestaurantConfig = {
     instagram: "https://instagram.com/naijapotkitchen",
     tiktok: "https://tiktok.com/@naijapotkitchen",
     facebook: "https://facebook.com/naijapotkitchen",
-    whatsapp: "https://wa.me/442079460852",
+    whatsapp: "https://wa.me/447342229865",
   },
 
   branding: {
-    burgundy: "#6D1F2B",
-    royalGold: "#C6A15B",
-    warmIvory: "#FFF7E8",
-    deepCharcoal: "#211A19",
-    softCream: "#F3E8D6",
-    logoImagePath: null, // Supports custom file e.g. "/images/logo.png" from Canva export
+    black: "#0B0A09", // Deep luxury obsidian black
+    blackSoft: "#141210", // Rich charcoal black
+    brown: "#3D2314", // Signature roasted Bukka brown
+    brownDark: "#26160C", // Deep earthen brown
+    brownWarm: "#4A2C1A", // Warm mahogany brown
+    brownLight: "#5C3822", // Terracotta saddle brown
+    gold: "#D4A53A", // Signature royal gold
+    goldLight: "#E8C547", // Shimmering light gold
+    goldBright: "#F5CE58", // Radiant gold
+    goldDim: "#9E7B28", // Burnished antique gold
+    royalGold: "#D4A53A",
+    burgundy: "#3D2314", // Graceful alias mapped to rich brown
+    warmIvory: "#FAF6F0", // Warm earthen ivory
+    deepCharcoal: "#141210", // Black charcoal
+    softCream: "#F4ECE4", // Soft cream
+    whatsappGreen: "#25D366", // Official WhatsApp green
+    logoImagePath: "/assets/aistudio/IMG_7781_c41c3ef7.png", // Direct reference to uploaded official brand asset
   },
 
   policies: {

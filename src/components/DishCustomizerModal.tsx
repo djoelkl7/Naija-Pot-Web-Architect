@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MenuItem } from '../data/menuData';
 import { useCart, CartItemOption } from '../context/CartContext';
 import { X, Plus, Minus, Check, Flame } from 'lucide-react';
+import { LazyImage } from './LazyImage';
 
 interface DishCustomizerModalProps {
   dish: MenuItem | null;
@@ -51,36 +52,36 @@ export const DishCustomizerModal: React.FC<DishCustomizerModalProps> = ({ dish, 
       />
 
       {/* Modal Dialog */}
-      <div className="relative w-full max-w-lg bg-[#FFF7E8] rounded-xl shadow-2xl border border-[#6D1F2B]/20 overflow-hidden flex flex-col max-h-[90vh]">
+      <div className="relative w-full max-w-lg bg-[#FAF6F0] rounded-xl shadow-2xl border border-[#D4A53A]/30 overflow-hidden flex flex-col max-h-[90vh]">
         {/* Header / Media */}
-        <div className="relative h-48 bg-[#6D1F2B] overflow-hidden shrink-0">
+        <div className="relative h-48 bg-[#0B0A09] overflow-hidden shrink-0 group">
           {dish.image ? (
-            <img
+            <LazyImage
               src={dish.image}
               alt={dish.name}
               className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
+              showHoverOverlay={true}
+              overlayGradient="bg-gradient-to-t from-black/85 via-[#D4A53A]/15 to-transparent"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-[#4A121B] text-[#C6A15B]">
+            <div className="w-full h-full flex items-center justify-center bg-[#141210] text-[#D4A53A]">
               <span className="font-serif text-2xl font-bold">{dish.name}</span>
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors cursor-pointer"
+            className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/90 transition-colors cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
-          <div className="absolute bottom-3 left-4 right-4 text-white">
+          <div className="absolute bottom-3 left-4 right-4 text-white z-20">
             {dish.nativeName && (
-              <span className="text-xs uppercase tracking-wider text-[#C6A15B] font-semibold">
+              <span className="text-xs uppercase tracking-wider text-[#D4A53A] font-semibold">
                 {dish.nativeName}
               </span>
             )}
             <h3 className="font-serif text-xl font-bold leading-tight">{dish.name}</h3>
-            <span className="font-serif text-base font-bold text-[#C6A15B]">
+            <span className="font-serif text-base font-bold text-[#D4A53A]">
               £{dish.price.toFixed(2)}
             </span>
           </div>
@@ -196,25 +197,25 @@ export const DishCustomizerModal: React.FC<DishCustomizerModalProps> = ({ dish, 
         </div>
 
         {/* Footer Actions */}
-        <div className="p-4 bg-white border-t border-[#6D1F2B]/10 flex items-center justify-between gap-4 shrink-0">
+        <div className="p-4 bg-white border-t border-[#D4A53A]/20 flex items-center justify-between gap-4 shrink-0">
           {/* Quantity Selector */}
-          <div className="flex items-center border border-[#6D1F2B]/30 rounded-lg overflow-hidden bg-[#FFF7E8]">
+          <div className="flex items-center border border-[#D4A53A]/30 rounded-lg overflow-hidden bg-[#FAF6F0]">
             <button
               type="button"
               onClick={() => setQuantity(Math.max(1, quantity - 1))}
-              className="p-2 hover:bg-[#F3E8D6] transition-colors cursor-pointer"
+              className="p-2 hover:bg-[#F4ECE4] transition-colors cursor-pointer"
             >
-              <Minus className="w-4 h-4 text-[#6D1F2B]" />
+              <Minus className="w-4 h-4 text-[#3D2314]" />
             </button>
-            <span className="px-3.5 font-bold font-mono text-sm text-[#211A19]">
+            <span className="px-3.5 font-bold font-mono text-sm text-[#0B0A09]">
               {quantity}
             </span>
             <button
               type="button"
               onClick={() => setQuantity(quantity + 1)}
-              className="p-2 hover:bg-[#F3E8D6] transition-colors cursor-pointer"
+              className="p-2 hover:bg-[#F4ECE4] transition-colors cursor-pointer"
             >
-              <Plus className="w-4 h-4 text-[#6D1F2B]" />
+              <Plus className="w-4 h-4 text-[#3D2314]" />
             </button>
           </div>
 
@@ -222,10 +223,10 @@ export const DishCustomizerModal: React.FC<DishCustomizerModalProps> = ({ dish, 
           <button
             type="button"
             onClick={handleAddToCart}
-            className="flex-1 py-3 px-4 bg-[#6D1F2B] hover:bg-[#4A121B] text-[#FFF7E8] font-bold rounded-lg transition-colors flex items-center justify-between shadow-sm cursor-pointer"
+            className="flex-1 py-3 px-4 bg-[#3D2314] hover:bg-[#4E2E1A] text-[#FFFDF9] font-bold rounded-lg transition-colors flex items-center justify-between shadow-sm cursor-pointer border border-[#D4A53A]/40"
           >
             <span>Add to Basket</span>
-            <span className="font-serif tabular-nums text-sm">
+            <span className="font-serif tabular-nums text-sm text-[#D4A53A]">
               £{(dish.price * quantity).toFixed(2)}
             </span>
           </button>
