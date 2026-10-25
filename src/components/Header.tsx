@@ -3,6 +3,7 @@ import { BrandLogo } from './BrandLogo';
 import { useCart } from '../context/CartContext';
 import { siteConfig } from '../data/siteConfig';
 import { ShoppingBag, Menu as MenuIcon, X, Calendar, Phone } from 'lucide-react';
+import { FacebookIcon, InstagramIcon, TikTokIcon } from './SocialIcons';
 
 export type PageId = 'home' | 'story' | 'menu' | 'gallery' | 'reservations' | 'order' | 'contact';
 
@@ -170,6 +171,43 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                 <ShoppingBag className="w-4 h-4" />
                 Order Takeaway
               </button>
+
+              {/* Social Channels in Mobile Menu */}
+              <div className="pt-3 border-t border-[#D4A53A]/20 flex items-center justify-between text-xs text-stone-400">
+                <span className="font-semibold text-[#D4A53A]">Follow Us:</span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={siteConfig.socials.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-[#1E1B18] border border-[#D4A53A]/30 text-[#D4A53A] hover:text-[#FAF6F0] hover:border-[#D4A53A] flex items-center justify-center transition-colors"
+                    aria-label="Facebook"
+                    title="Follow on Facebook"
+                  >
+                    <FacebookIcon className="w-3.5 h-3.5" />
+                  </a>
+                  <a
+                    href={siteConfig.socials.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-[#1E1B18] border border-[#D4A53A]/30 text-[#D4A53A] hover:text-[#FAF6F0] hover:border-[#D4A53A] flex items-center justify-center transition-colors"
+                    aria-label="Instagram"
+                    title="Follow on Instagram"
+                  >
+                    <InstagramIcon className="w-3.5 h-3.5" />
+                  </a>
+                  <a
+                    href={siteConfig.socials.tiktok}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-[#1E1B18] border border-[#D4A53A]/30 text-[#D4A53A] hover:text-[#FAF6F0] hover:border-[#D4A53A] flex items-center justify-center transition-colors"
+                    aria-label="TikTok"
+                    title="Follow on TikTok"
+                  >
+                    <TikTokIcon className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
             </div>
           </nav>
         </div>

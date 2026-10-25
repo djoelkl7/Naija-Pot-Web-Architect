@@ -15,8 +15,10 @@ import {
   Sparkles, 
   CheckCircle2, 
   ChevronRight,
-  ShieldCheck
+  ShieldCheck,
+  Facebook
 } from 'lucide-react';
+import { TikTokIcon } from '../components/SocialIcons';
 
 interface HomeProps {
   onNavigate: (page: PageId) => void;
@@ -432,28 +434,51 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenDishCustomizer }) 
         </div>
       </section>
 
-      {/* 7. INSTAGRAM & SOCIAL GALLERY */}
-      <section className="bg-[#F3E8D6]/60 py-20 border-y border-[#6D1F2B]/10">
+      {/* 7. SOCIAL COMMUNITY GALLERY */}
+      <section className="bg-[#FAF6F0] py-20 border-y border-[#3D2314]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#6D1F2B]">
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#3D2314]">
                 Follow Along
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#211A19]">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0B0A09]">
                 A Taste of Naija, Every Day
               </h2>
             </div>
-            <a
-              href={siteConfig.socials.instagram}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#6D1F2B] hover:text-[#4A121B] transition-colors"
-            >
-              <Instagram className="w-4 h-4 text-[#C6A15B]" />
-              <span>@naijapotkitchen</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </a>
+            {/* Social Channels Row: Facebook, Instagram, TikTok */}
+            <div className="flex items-center gap-2 flex-wrap">
+              <a
+                href={siteConfig.socials.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1E1B18] border border-[#D4A53A]/30 text-xs font-semibold text-[#D4A53A] hover:text-[#FAF6F0] hover:border-[#D4A53A] hover:bg-[#3D2314] transition-all shadow-xs"
+                title="Follow Naija Pot on Facebook"
+              >
+                <Facebook className="w-3.5 h-3.5" />
+                <span>Facebook</span>
+              </a>
+              <a
+                href={siteConfig.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1E1B18] border border-[#D4A53A]/30 text-xs font-semibold text-[#D4A53A] hover:text-[#FAF6F0] hover:border-[#D4A53A] hover:bg-[#3D2314] transition-all shadow-xs"
+                title="Follow Naija Pot on Instagram"
+              >
+                <Instagram className="w-3.5 h-3.5" />
+                <span>Instagram</span>
+              </a>
+              <a
+                href={siteConfig.socials.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1E1B18] border border-[#D4A53A]/30 text-xs font-semibold text-[#D4A53A] hover:text-[#FAF6F0] hover:border-[#D4A53A] hover:bg-[#3D2314] transition-all shadow-xs"
+                title="Follow Naija Pot on TikTok"
+              >
+                <TikTokIcon className="w-3.5 h-3.5" />
+                <span>TikTok</span>
+              </a>
+            </div>
           </div>
 
           {/* Gallery Preview Grid */}

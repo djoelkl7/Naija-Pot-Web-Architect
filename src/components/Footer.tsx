@@ -3,6 +3,7 @@ import { BrandLogo } from './BrandLogo';
 import { siteConfig } from '../data/siteConfig';
 import { PageId } from './Header';
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, ArrowUpRight } from 'lucide-react';
+import { TikTokIcon } from './SocialIcons';
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
@@ -31,47 +32,73 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </p>
             </div>
             {/* Social & Contact Quick Icons */}
-            <div className="flex items-center gap-3 pt-2">
-              {/* WhatsApp Green Icon */}
-              <a
-                href={siteConfig.socials.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-105 transition-transform shadow-md"
-                aria-label={`WhatsApp (${siteConfig.contact.whatsappPhone})`}
-                title={`WhatsApp: ${siteConfig.contact.whatsappPhone}`}
-              >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.761.88 2.8.88 3.182 0 5.768-2.587 5.768-5.766.001-3.181-2.585-5.767-5.772-5.772-5.767zm7.65 5.766c0 4.218-3.433 7.651-7.65 7.651-1.336 0-2.434-.343-3.489-.968l-4.542 1.19 1.213-4.432c-.696-1.111-1.066-2.228-1.066-3.441 0-4.219 3.433-7.651 7.65-7.651 4.217 0 7.649 3.432 7.649 7.651z" />
-                </svg>
-              </a>
-              <a
-                href={siteConfig.socials.instagram}
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.socials.facebook}
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.contact.googleMapsDirectionsUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] transition-colors"
-                aria-label="Google Maps Location"
-              >
-                <MapPin className="w-4 h-4" />
-              </a>
+            <div className="pt-2">
+              <span className="text-[11px] uppercase tracking-wider text-[#D4A53A] font-semibold block mb-2.5">
+                Connect & Follow Us
+              </span>
+              <div className="flex items-center gap-2.5 flex-wrap">
+                {/* Facebook */}
+                <a
+                  href={siteConfig.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] hover:bg-[#3D2314] hover:scale-105 transition-all shadow-sm"
+                  aria-label="Facebook: @naijapotkitchen"
+                  title="Follow Naija Pot on Facebook"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+
+                {/* Instagram */}
+                <a
+                  href={siteConfig.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] hover:bg-[#3D2314] hover:scale-105 transition-all shadow-sm"
+                  aria-label="Instagram: @naijapotkitchen"
+                  title="Follow Naija Pot on Instagram"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+
+                {/* TikTok */}
+                <a
+                  href={siteConfig.socials.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] hover:bg-[#3D2314] hover:scale-105 transition-all shadow-sm"
+                  aria-label="TikTok: @naijapotkitchen"
+                  title="Follow Naija Pot on TikTok"
+                >
+                  <TikTokIcon className="w-4 h-4" />
+                </a>
+
+                {/* WhatsApp Green Icon */}
+                <a
+                  href={siteConfig.socials.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-105 transition-transform shadow-md"
+                  aria-label={`WhatsApp (${siteConfig.contact.whatsappPhone})`}
+                  title={`WhatsApp: ${siteConfig.contact.whatsappPhone}`}
+                >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.761.88 2.8.88 3.182 0 5.768-2.587 5.768-5.766.001-3.181-2.585-5.767-5.772-5.772-5.767zm7.65 5.766c0 4.218-3.433 7.651-7.65 7.651-1.336 0-2.434-.343-3.489-.968l-4.542 1.19 1.213-4.432c-.696-1.111-1.066-2.228-1.066-3.441 0-4.219 3.433-7.651 7.65-7.651 4.217 0 7.649 3.432 7.649 7.651z" />
+                  </svg>
+                </a>
+
+                {/* Google Maps Location */}
+                <a
+                  href={siteConfig.contact.googleMapsDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] hover:bg-[#3D2314] hover:scale-105 transition-all shadow-sm"
+                  aria-label="Google Maps Location"
+                  title="Get Directions on Google Maps"
+                >
+                  <MapPin className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
 

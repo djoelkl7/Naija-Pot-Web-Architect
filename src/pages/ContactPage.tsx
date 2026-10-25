@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { siteConfig } from '../data/siteConfig';
 import { PageId } from '../components/Header';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, AlertCircle, ChevronDown, Sparkles } from 'lucide-react';
+import { FacebookIcon, InstagramIcon, TikTokIcon } from '../components/SocialIcons';
 
 interface ContactPageProps {
   onNavigate: (page: PageId) => void;
@@ -148,6 +149,45 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-[#3D2314] font-medium">
                     {siteConfig.contact.email}
                   </a>
+                </div>
+
+                {/* Social Media Channels */}
+                <div className="pt-2">
+                  <span className="text-[10px] uppercase tracking-wider text-stone-500 font-bold block mb-2">
+                    Follow Our Social Channels
+                  </span>
+                  <div className="grid grid-cols-3 gap-2">
+                    <a
+                      href={siteConfig.socials.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-[#FAF6F0] border border-[#D4A53A]/30 text-xs font-semibold text-[#3D2314] hover:bg-[#3D2314] hover:text-[#D4A53A] hover:border-[#D4A53A] transition-all shadow-xs"
+                      title="Follow Naija Pot on Facebook"
+                    >
+                      <FacebookIcon className="w-3.5 h-3.5" />
+                      <span>Facebook</span>
+                    </a>
+                    <a
+                      href={siteConfig.socials.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-[#FAF6F0] border border-[#D4A53A]/30 text-xs font-semibold text-[#3D2314] hover:bg-[#3D2314] hover:text-[#D4A53A] hover:border-[#D4A53A] transition-all shadow-xs"
+                      title="Follow Naija Pot on Instagram"
+                    >
+                      <InstagramIcon className="w-3.5 h-3.5" />
+                      <span>Instagram</span>
+                    </a>
+                    <a
+                      href={siteConfig.socials.tiktok}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-[#FAF6F0] border border-[#D4A53A]/30 text-xs font-semibold text-[#3D2314] hover:bg-[#3D2314] hover:text-[#D4A53A] hover:border-[#D4A53A] transition-all shadow-xs"
+                      title="Follow Naija Pot on TikTok"
+                    >
+                      <TikTokIcon className="w-3.5 h-3.5" />
+                      <span>TikTok</span>
+                    </a>
+                  </div>
                 </div>
               </div>
 
