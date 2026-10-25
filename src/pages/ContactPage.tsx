@@ -172,7 +172,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-[#FAF6F0] border border-[#D4A53A]/30 text-xs font-semibold text-[#3D2314] hover:bg-[#3D2314] hover:text-[#D4A53A] hover:border-[#D4A53A] transition-all shadow-xs"
-                      title="Follow Naija Pot on Instagram"
+                      title="Follow Naija Pot on Instagram (@naijapotkitchen_grill_mk)"
                     >
                       <InstagramIcon className="w-3.5 h-3.5" />
                       <span>Instagram</span>
@@ -182,7 +182,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-[#FAF6F0] border border-[#D4A53A]/30 text-xs font-semibold text-[#3D2314] hover:bg-[#3D2314] hover:text-[#D4A53A] hover:border-[#D4A53A] transition-all shadow-xs"
-                      title="Follow Naija Pot on TikTok"
+                      title="Follow Naija Pot on TikTok (@naija.pot.kitchen)"
                     >
                       <TikTokIcon className="w-3.5 h-3.5" />
                       <span>TikTok</span>

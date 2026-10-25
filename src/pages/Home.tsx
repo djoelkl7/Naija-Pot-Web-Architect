@@ -463,7 +463,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenDishCustomizer }) 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1E1B18] border border-[#D4A53A]/30 text-xs font-semibold text-[#D4A53A] hover:text-[#FAF6F0] hover:border-[#D4A53A] hover:bg-[#3D2314] transition-all shadow-xs"
-                title="Follow Naija Pot on Instagram"
+                title="Follow Naija Pot on Instagram (@naijapotkitchen_grill_mk)"
               >
                 <Instagram className="w-3.5 h-3.5" />
                 <span>Instagram</span>
@@ -473,7 +473,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, onOpenDishCustomizer }) 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1E1B18] border border-[#D4A53A]/30 text-xs font-semibold text-[#D4A53A] hover:text-[#FAF6F0] hover:border-[#D4A53A] hover:bg-[#3D2314] transition-all shadow-xs"
-                title="Follow Naija Pot on TikTok"
+                title="Follow Naija Pot on TikTok (@naija.pot.kitchen)"
               >
                 <TikTokIcon className="w-3.5 h-3.5" />
                 <span>TikTok</span>

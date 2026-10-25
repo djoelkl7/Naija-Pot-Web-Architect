@@ -48,14 +48,14 @@ export const SocialMediaLinks: React.FC<SocialLinksGroupProps> = ({
     {
       name: 'Instagram',
       url: siteConfig.socials.instagram,
-      handle: '@naijapotkitchen',
+      handle: '@naijapotkitchen_grill_mk',
       icon: <InstagramIcon className={size === 'sm' ? 'w-3.5 h-3.5' : size === 'lg' ? 'w-5 h-5' : 'w-4 h-4'} />,
       hoverClass: 'hover:text-[#E4405F] hover:border-[#E4405F]/60 hover:bg-[#E4405F]/10',
     },
     {
       name: 'TikTok',
       url: siteConfig.socials.tiktok,
-      handle: '@naijapotkitchen',
+      handle: '@naija.pot.kitchen',
       icon: <TikTokIcon className={size === 'sm' ? 'w-3.5 h-3.5' : size === 'lg' ? 'w-5 h-5' : 'w-4 h-4'} />,
       hoverClass: 'hover:text-[#00f2fe] hover:border-[#00f2fe]/60 hover:bg-black/30',
     },

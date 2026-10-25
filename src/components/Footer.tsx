@@ -55,8 +55,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] hover:bg-[#3D2314] hover:scale-105 transition-all shadow-sm"
-                  aria-label="Instagram: @naijapotkitchen"
-                  title="Follow Naija Pot on Instagram"
+                  aria-label="Instagram: @naijapotkitchen_grill_mk"
+                  title="Follow Naija Pot on Instagram (@naijapotkitchen_grill_mk)"
                 >
                   <Instagram className="w-4 h-4" />
                 </a>
@@ -67,8 +67,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full bg-[#1E1B18] border border-[#D4A53A]/40 flex items-center justify-center text-[#D4A53A] hover:text-[#FFFDF9] hover:border-[#D4A53A] hover:bg-[#3D2314] hover:scale-105 transition-all shadow-sm"
-                  aria-label="TikTok: @naijapotkitchen"
-                  title="Follow Naija Pot on TikTok"
+                  aria-label="TikTok: @naija.pot.kitchen"
+                  title="Follow Naija Pot on TikTok (@naija.pot.kitchen)"
                 >
                   <TikTokIcon className="w-4 h-4" />
                 </a>
